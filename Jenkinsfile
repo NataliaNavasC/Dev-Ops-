@@ -4,7 +4,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh 'ls -l'
-                sh 'cp ./rp-portfolio /deploy'
+                sh 'cp -r ./rp-portfolio /deploy'
             }
         }
     }
