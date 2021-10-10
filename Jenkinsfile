@@ -25,7 +25,6 @@ pipeline {
                 dir('./rp-portfolio') {
                     sh 'python3 manage.py makemigrations projects'
                     sh 'python3 manage.py migrate projects'
-                    sh 'python3 manage.py runserver'
                 }
             }
         }
