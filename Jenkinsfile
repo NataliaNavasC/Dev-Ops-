@@ -18,6 +18,8 @@ pipeline {
                 sh 'ls -l'
                 sh 'cd ./rp-portfolio'
                 sh 'ls -l'
+                sh 'cd ./rp-portfolio'
+                sh 'ls -l'
                 sh 'python manage.py makemigrations projects'
                 sh 'manage.py migrate projects'
                 sh 'manage.py runserver'
