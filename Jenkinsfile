@@ -13,5 +13,12 @@ pipeline {
                 sh 'python --version'
             }
         }
+        stage('deploy') {
+            steps {
+                sh 'python manage.py makemigrations projects'
+                sh 'manage.py migrate projects'
+                sh 'manage.py runserver'
+            }
+        }
     }
 }
