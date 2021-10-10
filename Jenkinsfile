@@ -10,6 +10,7 @@ pipeline {
         stage('python config') {
             steps {
                 sh 'apt-get install python -y'
+                sh 'python --version'
             }
         }
     }
