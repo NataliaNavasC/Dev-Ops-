@@ -1,14 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Migration') {
-            steps {
-                dir('./rp-portfolio') {
-                    sh 'python3 manage.py makemigrations projects'
-                    sh 'python3 manage.py migrate projects'
-                }
-            }
-        }
         stage('Set up') {
             steps {
                 sh 'cp -r ./rp-portfolio /deploy'
@@ -25,6 +17,14 @@ pipeline {
             steps {
                 sh 'apt-get install python3-pip -y'
                 sh 'python3 -m pip install Django'
+            }
+        }
+        stage('Migration') {
+            steps {
+                dir('./rp-portfolio') {
+                    sh 'python3 manage.py makemigrations projects'
+                    sh 'python3 manage.py migrate projects'
+                }
             }
         }
         stage('Pylint') {
