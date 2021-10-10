@@ -11,7 +11,7 @@ pipeline {
         }
         stage('python config') {
             steps {
-                sh 'sudo apt-get install python3.10'
+                sh 'apt-get install python3.10'
                 sh 'python --version'
             }
         }
