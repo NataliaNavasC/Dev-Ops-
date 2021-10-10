@@ -28,6 +28,11 @@ pipeline {
                 sh 'python3 -m pip install Django'
             }
         }
-        
+        stage('Pylint') {
+            steps {
+                sh 'python3 -m pip install pylint'
+                sh 'pylint ./rp-portfolio'
+            }
+        }
     }
 }
