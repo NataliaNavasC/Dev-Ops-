@@ -16,13 +16,7 @@ pipeline {
                     sh 'ls -l'
                     sh 'tar -xf Python-3.7.5.tgz'
                     sh 'ls -l'
-                    dir('python-3.7.5') {
-                        sh 'ls -l'
-                        sh './configure --enable-optimizations'
-                        sh 'make altinstall'
-                        sh 'make install'
-                        sh 'python --version'
-                    }
+                    sh 'python --version'
                 }    
             }
         }
