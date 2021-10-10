@@ -10,10 +10,14 @@ pipeline {
         stage('python config') {
             steps {
                 sh 'apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget'
+                sh 'ls -l'
                 dir('tmp') {
                     sh 'wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz'
+                    sh 'ls -l'
                     sh 'tar -xf Python-3.8.3.tgz'
+                    sh 'ls -l'
                     dir('python-3.8.3') {
+                        sh 'ls -l'
                         sh './configure --enable-optimizations'
                         sh 'make altinstall'
                         sh 'make install'
