@@ -5,6 +5,8 @@ pipeline {
             steps {
                 sh 'ls -l'
                 sh 'cp -r ./rp-portfolio /deploy'
+                sh 'cd /deploy'
+                sh 'ls -l'
             }
         }
     }
