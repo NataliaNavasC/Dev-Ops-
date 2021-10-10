@@ -9,7 +9,6 @@ pipeline {
         }
         stage('python config') {
             steps {
-                sh 'apt update'
                 sh 'apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget'
                 sh 'cd /tmp'
                 sh 'wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz'
