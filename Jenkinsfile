@@ -16,6 +16,7 @@ pipeline {
         }
         stage('Django config') {
             steps {
+                sh 'apt-get install python3-pip -y'
                 sh 'python3 -m pip install Django'
             }
         }
