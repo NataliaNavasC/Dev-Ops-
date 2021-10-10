@@ -4,7 +4,7 @@ pipeline {
         stage('set up') {
             steps {
                 sh 'ls -l'
-                sh 'cp -i ./rp-portfolio /deploy'
+                sh 'cp -r ./rp-portfolio /deploy'
             }
         }
         stage('python config') {
