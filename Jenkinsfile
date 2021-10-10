@@ -9,9 +9,8 @@ pipeline {
         }
         stage('python config') {
             steps {
-                sh 'apt update'
-                sh 'apt install software-properties-common'
-                sh 'Y'
+                sh 'apt update -y'
+                sh 'apt install -y software-properties-common'
                 sh 'add-apt-repository ppa:deadsnakes/ppa'
                 sh 'apt update'
                 sh 'apt install python3.10'
