@@ -16,7 +16,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh 'ls -l'
-                sh 'cd /deploy/rp-portfolio'
+                sh 'cd /rp-portfolio'
                 sh 'python manage.py makemigrations projects'
                 sh 'manage.py migrate projects'
                 sh 'manage.py runserver'
