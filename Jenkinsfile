@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                dir('./rp-portfolio') {
+                dir('/deploy/rp-portfolio') {
                     sh 'python3 manage.py makemigrations projects'
                     sh 'python3 manage.py migrate projects'
                 }
