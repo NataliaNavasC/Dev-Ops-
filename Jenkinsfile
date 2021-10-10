@@ -9,22 +9,16 @@ pipeline {
         }
         stage('python config') {
             steps {
-                sh 'apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget'
-                sh 'ls -l'
-                dir('tmp') {
-                    sh 'wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz'
-                    sh 'ls -l'
-                    sh 'tar -xf Python-3.7.5.tgz'
-                    sh 'ls -l'
-                    sh 'python --version'
-                }    
+                sh 'apt-get upgrade'
+                sh 'apt-get update'
+                sh 'apt-get install python3 -y'
             }
         }
         stage('deploy') {
             steps {
-                sh 'python manage.py makemigrations projects'
-                sh 'manage.py migrate projects'
-                sh 'manage.py runserver'
+                sh 'python3 manage.py makemigrations projects'
+                sh 'python3 manage.py migrate projects'
+                sh 'python3 manage.py runserver'
             }
         }
     }
