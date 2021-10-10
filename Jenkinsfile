@@ -14,9 +14,9 @@ pipeline {
                 dir('tmp') {
                     sh 'wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz'
                     sh 'ls -l'
-                    sh 'tar -xf Python-3.8.3.tgz'
+                    sh 'tar -xf Python-3.7.5.tgz'
                     sh 'ls -l'
-                    dir('python-3.8.3') {
+                    dir('python-3.7.5') {
                         sh 'ls -l'
                         sh './configure --enable-optimizations'
                         sh 'make altinstall'
