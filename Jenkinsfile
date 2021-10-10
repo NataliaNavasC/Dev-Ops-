@@ -1,12 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage('deploy') {
+        stage('set up') {
             steps {
                 sh 'ls -l'
-                sh 'cp -r ./rp-portfolio /deploy'
+                sh 'cp ./rp-portfolio /deploy'
                 sh 'cd /deploy'
                 sh 'ls -l'
+            }
+        }
+        stage('python config') {
+            steps {
+                sh 'sudo apt-get install python3.10'
+                sh 'python --version'
             }
         }
     }
