@@ -9,8 +9,8 @@ pipeline {
         }
         stage('python config') {
             steps {
-                sh 'apt-get upgrade'
-                sh 'apt-get update'
+                sh 'apt-get -y upgrade'
+                sh 'apt-get -y update'
                 sh 'apt-get install python3 -y'
             }
         }
