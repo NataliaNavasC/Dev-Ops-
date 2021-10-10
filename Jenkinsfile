@@ -1,6 +1,14 @@
 pipeline {
     agent any
     stages {
+        stage('Migration') {
+            steps {
+                dir('./rp-portfolio') {
+                    sh 'python3 manage.py makemigrations projects'
+                    sh 'python3 manage.py migrate projects'
+                }
+            }
+        }
         stage('Set up') {
             steps {
                 sh 'ls -l'
@@ -20,13 +28,6 @@ pipeline {
                 sh 'python3 -m pip install Django'
             }
         }
-        stage('Deploy') {
-            steps {
-                dir('/deploy/rp-portfolio') {
-                    sh 'python3 manage.py makemigrations projects'
-                    sh 'python3 manage.py migrate projects'
-                }
-            }
-        }
+        
     }
 }
