@@ -9,7 +9,9 @@ pipeline {
         }
         stage('python config') {
             steps {
-                sh 'apt-get install python3.10'
+                sh 'add-apt-repository ppa:deadsnakes/ppa'
+                sh 'apt update'
+                sh 'apt install python3.10'
                 sh 'python --version'
             }
         }
